@@ -123,7 +123,7 @@ class RangeTouch {
 
         // Listen for events
         ['touchstart', 'touchmove', 'touchend'].forEach(type => {
-            this.element[method](type, event => this.set(event), false);
+            this.element[method](type, event => this.set(event), {userCapture: false, passive: true});
         });
     }
 
